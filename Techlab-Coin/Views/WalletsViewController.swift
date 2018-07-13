@@ -12,15 +12,39 @@ import JSONRPCKit
 
 class WalletsViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     // mark : variables
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     
-    var wallets: [String: String]
+    var wallets: [Wallet] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Wallets"
+        
         // Do any additional setup after loading the view, typically from a nib.
+        self.configureTableView()
+        
         self.getAccounts()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        
+    }
+    
+    @objc func addTapped() {
+        
+    }
+   
+    
+    
+    private func configureTableView() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.tableView.register(UINib(nibName: "WalletTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletTableViewCell")
     }
     
     private func getBalanceAccount(byAddress: String) {
@@ -36,7 +60,14 @@ class WalletsViewController: UIViewController {
         Session.send(httpRequest, callbackQueue: nil) { (result) in
             switch result {
             case .success(let result):
-                print(result)
+                for address in result {
+                    let wallet: Wallet = Wallet(address: address, balance: nil)
+                    self.wallets.append(wallet)
+                }
+                
+                self.getBalance {
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }
@@ -44,11 +75,77 @@ class WalletsViewController: UIViewController {
         
     }
 
+    private func getBalance(complete: @escaping () -> ()) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let multiTask = DispatchGroup()
+            
+            var errorOccurred = false
+            
+            for (index, wallet) in self.wallets.enumerated() {
+                multiTask.enter()
+                
+                let request = EthGetBalance(address: wallet.address, quantity: "latest")
+                
+                let batch = self.batchFactory.create(request)
+                let httpRequest = EthServiceRequest(batch: batch)
+                
+                Session.send(httpRequest, callbackQueue: nil) { (result) in
+                    switch result {
+                    case .success(let result):
+                        self.wallets[index].balance = result
+                        
+                        multiTask.leave()
+                    case .failure(let error):
+                        debugPrint(error)
+                        errorOccurred = true
+                        multiTask.leave()
+                    }
+                }
+                
+                // wait until entered task complete
+                multiTask.wait()
+                
+                // breaking out of the loop if an error has occurred
+                if errorOccurred { break }
+            }
+            
+            if !errorOccurred {
+                DispatchQueue.main.async {
+                    complete()
+                }
+            }
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+extension WalletsViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.wallets.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WalletTableViewCell", for: indexPath) as! WalletTableViewCell
+        cell.update(wallet: self.wallets[indexPath.row])
+        return cell
+    }
+}
 
+extension WalletsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let main = UIStoryboard.init(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "AccountDetailViewController") as? AccountDetailViewController {
+            vc.wallet = self.wallets[indexPath.row]
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 

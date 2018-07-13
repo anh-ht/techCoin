@@ -18,7 +18,7 @@ struct EthServiceRequest<Batch: JSONRPCKit.Batch>: APIKit.Request {
     let batch: Batch
     
     var baseURL: URL {
-        return URL(string: "http://localhost:8545")!
+        return URL(string: "http://192.168.0.5:8545")!
     }
     
     var method: HTTPMethod {
