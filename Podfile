@@ -12,6 +12,12 @@ target 'Techlab-Coin' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'QRCode'
   pod "ESTabBarController-swift"
+  pod 'Firebase'
+  pod 'Google'
+  pod 'GoogleSignIn'
+  pod 'FacebookLogin'
+  pod 'TwitterKit'
+  pod 'Fabric'
   # Pods for Techlab-Coin
 
 end

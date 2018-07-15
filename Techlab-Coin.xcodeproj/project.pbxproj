@@ -10,6 +10,13 @@
 		09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5B20EF46B80009A8C0 /* Wallet.swift */; };
 		09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */; };
 		09562D6120EF4E8E0009A8C0 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */; };
+		0957DA6520F903350028766C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6420F903350028766C /* NavigationController.swift */; };
+		0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6920FA16670028766C /* SignInViewController.swift */; };
+		0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6B20FA52BF0028766C /* Gmail.swift */; };
+		0957DA6E20FA52D90028766C /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6D20FA52D90028766C /* Twitter.swift */; };
+		0957DA7020FA52F70028766C /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6F20FA52F70028766C /* Facebook.swift */; };
+		0957DA7220FA53390028766C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA7120FA53390028766C /* Reachability.swift */; };
+		09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */; };
 		09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2B20E61F8B00C06D69 /* AppDelegate.swift */; };
 		09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */; };
 		09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A2F20E61F8B00C06D69 /* Main.storyboard */; };
@@ -27,6 +34,13 @@
 		09562D5B20EF46B80009A8C0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
+		0957DA6420F903350028766C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0957DA6920FA16670028766C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0957DA6B20FA52BF0028766C /* Gmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gmail.swift; sourceTree = "<group>"; };
+		0957DA6D20FA52D90028766C /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		0957DA6F20FA52F70028766C /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		0957DA7120FA53390028766C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09906A2820E61F8B00C06D69 /* Techlab-Coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techlab-Coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09906A2B20E61F8B00C06D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +72,11 @@
 			isa = PBXGroup;
 			children = (
 				09562D5B20EF46B80009A8C0 /* Wallet.swift */,
+				0957DA6B20FA52BF0028766C /* Gmail.swift */,
+				09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */,
+				0957DA6D20FA52D90028766C /* Twitter.swift */,
+				0957DA6F20FA52F70028766C /* Facebook.swift */,
+				0957DA7120FA53390028766C /* Reachability.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +119,7 @@
 				09906A3220E61F9000C06D69 /* Assets.xcassets */,
 				09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */,
 				09906A3720E61F9000C06D69 /* Info.plist */,
+				0957DA6420F903350028766C /* NavigationController.swift */,
 			);
 			path = "Techlab-Coin";
 			sourceTree = "<group>";
@@ -112,6 +132,7 @@
 				09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */,
 				09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */,
 				09C1485220F89C990025CC76 /* SendViewController.swift */,
+				0957DA6920FA16670028766C /* SignInViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,6 +174,7 @@
 				09906A2520E61F8B00C06D69 /* Frameworks */,
 				09906A2620E61F8B00C06D69 /* Resources */,
 				A30908DB5EC2B3A2817C584D /* [CP] Embed Pods Frameworks */,
+				6F77837C74427C8A8A7AAD35 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +225,7 @@
 			files = (
 				09562D6120EF4E8E0009A8C0 /* WalletTableViewCell.xib in Resources */,
 				09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */,
+				09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */,
 				09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */,
 				09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */,
 			);
@@ -211,6 +234,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F77837C74427C8A8A7AAD35 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82EDAC0262CB95410A1658D0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,22 +280,42 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONRPCKit/JSONRPCKit.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONRPCKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -266,13 +329,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0957DA7220FA53390028766C /* Reachability.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
 				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
 				09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */,
+				0957DA6520F903350028766C /* NavigationController.swift in Sources */,
+				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
+				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
 				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
+				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
 				09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */,
 				09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */,
+				0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */,
 				09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

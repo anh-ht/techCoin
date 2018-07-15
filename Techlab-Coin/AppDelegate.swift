@@ -7,15 +7,35 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
+import TwitterKit
+import FirebaseCore
+import Google
+import GoogleSignIn
+import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FIRApp.configure()
+//        'You must specify |clientID| for |GIDSignIn|'
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = main.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
+        
+        window                      = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController  = vc
+        window?.backgroundColor     = UIColor.white
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -40,6 +60,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if(LISDKCallbackHandler.shouldHandle(url)) {
+//            return LISDKCallbackHandler.application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+//        }
+        
+        if TWTRTwitter.sharedInstance().application(app, open:url, options: options) {
+            return true
+        }
+        
+        if(url.scheme == "fb173382236861611") { //Facebook
+            
+            //            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        }
+        else { //Gmail
+            return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        }
+        
+    }
+    
 
 
 }

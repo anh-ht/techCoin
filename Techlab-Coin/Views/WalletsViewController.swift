@@ -21,25 +21,12 @@ class WalletsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Wallets"
-        
         // Do any additional setup after loading the view, typically from a nib.
         self.configureTableView()
         
         self.getAccounts()
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        
     }
-    
-    @objc func addTapped() {
-        
-    }
-   
-    
-    
+
     private func configureTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
