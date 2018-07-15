@@ -8,12 +8,31 @@
 
 import UIKit
 import ESTabBarController_swift
+import ChameleonFramework
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet weak var gmailButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var twitterButton: UIButton!
+    @IBOutlet weak var namePrLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = FlatWhite()
+        
+        self.gmailButton.backgroundColor = FlatRed()
+        self.gmailButton.layer.cornerRadius = 3.0
+        self.gmailButton.setTitleColor(FlatWhite(), for: .normal)
+        
+        self.facebookButton.backgroundColor = FlatBlue()
+        self.facebookButton.layer.cornerRadius = 3.0
+        self.facebookButton.setTitleColor(FlatWhite(), for: .normal)
+        
+        self.twitterButton.backgroundColor = FlatSkyBlue()
+        self.twitterButton.layer.cornerRadius = 3.0
+        self.twitterButton.setTitleColor(FlatWhite(), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,7 +11,6 @@ import UIKit
 import GoogleSignIn
 import Google
 
-
 typealias SuccessHandler = (_ success:AnyObject) -> Void
 typealias FailHandler = (_ success:AnyObject) -> Void
 
@@ -82,7 +81,14 @@ class GmailClass: NSObject, GIDSignInDelegate, GIDSignInUIDelegate {
             print("GivenName  : \(user.profile.givenName)")
             print("Family Name: \(user.profile.familyName)")
             print("EmailId    : \(user.profile.email)")
-
+            
+            if (GIDSignIn.sharedInstance().currentUser != nil) {
+                
+                let imageUrl = GIDSignIn.sharedInstance().currentUser.profile.imageURL(withDimension: 400).absoluteString                
+                print(imageUrl)
+                
+            }
+            
             loginSucess!(user as AnyObject)
         }
         else {

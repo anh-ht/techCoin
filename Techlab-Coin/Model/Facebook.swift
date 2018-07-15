@@ -48,7 +48,7 @@ class FacebookClass: NSObject {
     //MARK: - Login with Facebook
     
     func loginWithFacebook(viewController: UIViewController, successHandler: @escaping FBSuccessHandler, failHandler: @escaping FBFailHandler) {
-        
+        self.logoutFromFacebook()
         vc = viewController
         loginFail = failHandler
         loginSucess = successHandler
@@ -87,7 +87,7 @@ class FacebookClass: NSObject {
     
     func getUserInfoFromFB() {
         
-        let params = ["fields":"cover,picture.type(large),id,name,first_name,last_name,gender,birthday,email,location,hometown"]
+        let params = ["fields":"cover,picture.type(large),id,name,first_name,last_name,email,location"]
         let graphRequest = GraphRequest(graphPath: "me", parameters: params)
         
         graphRequest.start {

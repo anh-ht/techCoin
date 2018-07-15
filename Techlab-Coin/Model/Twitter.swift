@@ -67,18 +67,41 @@ class TwitterClass: NSObject {
                     print("userID       :\(self.strUserId)")
                     
                     self.loginSucess!(session as AnyObject)
+                    self.getAccountInfo(userID: self.strUserId)
                 }
                 else {
                     self.loginFail!(error?.localizedDescription as AnyObject)
                 }
                 
-            }            
+            }
         }
         else {
             print("No internet Connection.")
             self.loginFail!("No internet Connection." as AnyObject)
         }
         
+    }
+    
+    func getAccountInfo(userID: String) {
+        let statusesShowEndpoint = "https://api.twitter.com/1.1/account/verify_credentials.json"
+        let params = ["user_id": userID]
+        
+        var clientError : NSError?
+        
+        let request = TWTRAPIClient.withCurrentUser().urlRequest(withMethod: "GET", urlString: statusesShowEndpoint, parameters: params, error: &clientError)
+
+        TWTRAPIClient.withCurrentUser().sendTwitterRequest(request) { (response, data, connectionError) -> Void in
+            if connectionError != nil {
+                print("Error: \(connectionError)")
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                print("json: \(json)")
+            } catch let jsonError as NSError {
+                print("json error: \(jsonError.localizedDescription)")
+            }
+        }
     }
     
     func logoutFromTwitter() {

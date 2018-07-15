@@ -17,6 +17,7 @@
 		0957DA7020FA52F70028766C /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6F20FA52F70028766C /* Facebook.swift */; };
 		0957DA7220FA53390028766C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA7120FA53390028766C /* Reachability.swift */; };
 		09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */; };
+		09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09653C9E20FB2F2400D3FC5E /* SocialUser.swift */; };
 		09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2B20E61F8B00C06D69 /* AppDelegate.swift */; };
 		09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */; };
 		09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A2F20E61F8B00C06D69 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		0957DA6F20FA52F70028766C /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		0957DA7120FA53390028766C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09653C9E20FB2F2400D3FC5E /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
 		09906A2820E61F8B00C06D69 /* Techlab-Coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techlab-Coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09906A2B20E61F8B00C06D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
@@ -71,7 +73,7 @@
 		09562D5A20EF46A60009A8C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				09562D5B20EF46B80009A8C0 /* Wallet.swift */,
+				09653C9D20FB2EEA00D3FC5E /* Parses */,
 				0957DA6B20FA52BF0028766C /* Gmail.swift */,
 				09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */,
 				0957DA6D20FA52D90028766C /* Twitter.swift */,
@@ -88,6 +90,15 @@
 				09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */,
 			);
 			path = Xib;
+			sourceTree = "<group>";
+		};
+		09653C9D20FB2EEA00D3FC5E /* Parses */ = {
+			isa = PBXGroup;
+			children = (
+				09562D5B20EF46B80009A8C0 /* Wallet.swift */,
+				09653C9E20FB2F2400D3FC5E /* SocialUser.swift */,
+			);
+			path = Parses;
 			sourceTree = "<group>";
 		};
 		09906A1F20E61F8B00C06D69 = {
@@ -337,6 +348,7 @@
 				0957DA6520F903350028766C /* NavigationController.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
+				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
 				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
 				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
 				09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */,
